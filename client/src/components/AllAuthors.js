@@ -51,7 +51,7 @@ const AllAuthors = props => {
             {
                 allAuthors.map((author, i) => 
                         <TableRow key={i}>
-                            <TableCell><Button> {author.name}</Button></TableCell>
+                            <TableCell><Link to={`/authors/${author._id}`}><Button> {author.name}</Button></Link></TableCell>
                             <TableCell><Button style={style}><Link style={{color: 'white'}} to={`/authors/${author._id}/update`}> Edit </Link></Button></TableCell>
                             <TableCell><DeleteButton authorId={author._id} successCallback={()=>removeFromDom(author._id)}/></TableCell>
                         </TableRow>

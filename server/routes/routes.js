@@ -8,4 +8,6 @@ module.exports = function(app) {
     app.get("/api/authors/:id", AuthorController.getOneAuthor);
     app.put("/api/authors/:id/", AuthorController.updateAuthor);
     app.delete("/api/authors/:id/", AuthorController.deleteAuthor);
+    app.post("/api/authors/:id/quote", AuthorController.createQuote);
+    // app.get("/api/authors/:id/quote", AuthorController.getQuotes);
 }

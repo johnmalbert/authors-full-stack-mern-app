@@ -23,6 +23,7 @@ function App() {
         <AllAuthors path="/authors"/> 
         <Detail path="/authors/:id" />
         <Update path="/authors/:id/update" />
+        
       </Router>
 
     </div>

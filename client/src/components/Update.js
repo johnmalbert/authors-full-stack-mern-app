@@ -1,3 +1,4 @@
+import { navigate } from '@reach/router';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import FormPage from './FormPage';
@@ -29,6 +30,8 @@ const Update = props => {
                         errorArr.push(errorResponse[key].message);
                     }
                     setErrors(errorArr);
+                }else{
+                    { navigate('/authors') }
                 }
             })
     }

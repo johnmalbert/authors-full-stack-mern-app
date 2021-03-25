@@ -28,7 +28,7 @@ const Main = () => {
             {/* The main will call the form */}
             <hr/>
             {errors.map((err, index) => <p style={{color: 'red'}} key={index}>{err}</p>)}
-            <FormPage onSubmitProp={createAuthor} initialName="" />
+            <FormPage label="Author Name" onSubmitProp={createAuthor} initialName="" />
         </div>
     )
 }

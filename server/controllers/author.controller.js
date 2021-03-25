@@ -19,6 +19,11 @@ module.exports = {
         //     .then(author => res.json(author))
         //     .catch(err => console.log("Error creating an author", err));
     },
+    createQuote: (req, res) => {
+        Author.findOneAndUpdate({_id: req.params.id}, { $addToSet: {quotes: req.body} }, {new: true, runValidators: true})
+            .then(data => res.status(200).json({message: "success", results: data }))
+            .catch(err => res.json({ message: "error", errors: err.errors}))
+    },
     //r
     getAllAuthors: (req, res) => {
         Author.find()
@@ -30,6 +35,10 @@ module.exports = {
             .then(data => res.status(200).json({message: "success", results: data}))
             .catch(err => res.json({message: "error", errors: err.errors}))
     },
+    // getQuotes: (req, res) => {
+    //     Author.findById(req.params.id)
+    //         .then(data => res)
+    // }
     //u
     updateAuthor: (req, res) => {
         Author.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true})
